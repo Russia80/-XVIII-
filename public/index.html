@@ -1,0 +1,53 @@
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меридиан: Шёпот Железных Нервов</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="game-container">
+    <header>
+      <h1>⚙️ МЕРИДИАН</h1>
+      <p class="subtitle">Шёпот Железных Нервов</p>
+      <div id="version">v1.0.0</div>
+    </header>
+
+    <div id="status-bar">
+      <div class="stat" id="stat-dynasty">Род: 50%</div>
+      <div class="stat" id="stat-honor">Честь: 50%</div>
+      <div class="stat" id="stat-interest">Интерес: 30%</div>
+      <div class="stat" id="stat-conscience">Совесть: 0%</div>
+      <div class="stat" id="stat-location">📍 Заозерье</div>
+    </div>
+
+    <div id="dialogue">
+      <div id="atmosphere">🌲 Лес / Дёготь / Лампада</div>
+      <div id="narrator">Система</div>
+      <div id="text"></div>
+    </div>
+
+    <div id="choices"></div>
+
+    <div id="input-area">
+      <input type="text" id="command-input" placeholder="Введите номер выбора или команду..." autofocus>
+      <button id="send-btn">→</button>
+    </div>
+
+    <div id="footer">
+      <span class="command">[i] Инвентарь</span>
+      <span class="command">[s] Статистика</span>
+      <span class="command">[r] Ритуал</span>
+      <span class="command">[save] Сохранить</span>
+      <span class="command">[load] Загрузить</span>
+      <span class="command">[q] Выход</span>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
