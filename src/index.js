@@ -1,4 +1,4 @@
-avascript
+javascript
 #!/usr/bin/env node
 
 /**
