@@ -1,0 +1,53 @@
+cmd
+echo { > package.json
+echo   "name": "meridian-game", >> package.json
+echo   "version": "1.0.0", >> package.json
+echo   "description": "Меридиан: Шёпот Железных Нервов — исторический симулятор личности в эпоху Просвещения", >> package.json
+echo   "main": "src/index.js", >> package.json
+echo   "bin": { >> package.json
+echo     "meridian": "./src/cli/interface.js" >> package.json
+echo   }, >> package.json
+echo   "scripts": { >> package.json
+echo     "start": "node src/index.js", >> package.json
+echo     "dev": "nodemon src/index.js", >> package.json
+echo     "server": "node src/server.js", >> package.json
+echo     "web": "npm run server ^& open http://localhost:3000", >> package.json
+echo     "test": "jest", >> package.json
+echo     "test:watch": "jest --watch", >> package.json
+echo     "lint": "eslint src/**/*.js", >> package.json
+echo     "format": "prettier --write src/**/*.js", >> package.json
+echo     "build": "node scripts/build.js", >> package.json
+echo     "seed": "node scripts/seed.js", >> package.json
+echo     "docs": "node scripts/generate-docs.js" >> package.json
+echo   }, >> package.json
+echo   "keywords": [ >> package.json
+echo     "rpg", >> package.json
+echo     "historical", >> package.json
+echo     "russia", >> package.json
+echo     "18th-century", >> package.json
+echo     "meridian", >> package.json
+echo     "interactive-fiction" >> package.json
+echo   ], >> package.json
+echo   "author": "Рушан", >> package.json
+echo   "license": "MIT", >> package.json
+echo   "dependencies": { >> package.json
+echo     "express": "^4.18.2", >> package.json
+echo     "socket.io": "^4.7.2", >> package.json
+echo     "chalk": "^4.1.2", >> package.json
+echo     "inquirer": "^8.2.5", >> package.json
+echo     "dotenv": "^16.3.1", >> package.json
+echo     "fs-extra": "^11.1.1", >> package.json
+echo     "uuid": "^9.0.0", >> package.json
+echo     "winston": "^3.10.0" >> package.json
+echo   }, >> package.json
+echo   "devDependencies": { >> package.json
+echo     "nodemon": "^3.0.1", >> package.json
+echo     "jest": "^29.6.2", >> package.json
+echo     "eslint": "^8.47.0", >> package.json
+echo     "prettier": "^3.0.1", >> package.json
+echo     "supertest": "^6.3.3" >> package.json
+echo   }, >> package.json
+echo   "engines": { >> package.json
+echo     "node": ">=16.0.0" >> package.json
+echo   } >> package.json
+echo } >> package.json
