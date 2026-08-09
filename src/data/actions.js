@@ -138,3 +138,7 @@ const actions = {
 };
 
 module.exports = actions;
+/**
+ * Meridian: Действия персонажа
+ * Все функции, которые выполняются при выборе
+ */
