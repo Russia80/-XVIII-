@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Meridian Protocol</title>
+    <style>
+        body { 
+            background-color: #0a0a0a; color: #0f0; 
+            font-family: 'Courier New', monospace; 
+            display: flex; justify-content: center; align-items: center; height: 100vh;
+        }
+        #game-box {
+            border: 2px solid #00ff00; padding: 20px; 
+            max-width: 800px; background: #000; box-shadow: 0 0 20px rgba(0,255,0,0.2);
+        }
+        button { background: #000; color: #0f0; border: 1px solid #0f0; padding: 10px; cursor: pointer; margin-top: 10px;}
+        .log { min-height: 200px; white-space: pre-wrap; background: #111; padding: 10px; border: 1px solid #0f0; }
+    </style>
+</head>
+<body>
+    <div id="game-box">
+        <h1 style="text-align:center;">АКТ I: ЗАОЗЕРЬЕ</h1>
+        <div id="story-text"></div>
+        <div id="choices"></div>
+    </div>
+
+<script>
+// --- СЮЖЕТ ---
+const gameData = [
+    {
+        id: "start", act: "АКТ I", art: "",
+        text: "Стук дождя смолкает. Тишина.\nОтец Владимир сидит у постели.",
+        choices: [{text: "Осмотреться", next: "room"}]
+    },
+    {
+        id: "room", act: "", art: "",
+        text: "В углу мерцает лампада перед иконой. На столе — пустая кружка.",
+        choices: [
+            {text: "Осмотреть сундук", next: "chest"},
+            {text: "Выйти во двор", next: "yard"}
+        ]
+    },
+    // Сюда будем добавлять Акты II, III...
+];
+
+// --- ДВИЖОК ---
+let currentSceneId = "start";
+function render() {
+    const scene = gameData.find(s => s.id === currentSceneId);
+    if (!scene) return;
+    
+    document.getElementById('act-title').innerText = scene.act || "";
+    let story = scene.text.replace(/\n/g, "<br>");
+    document.getElementById('story-text').innerHTML = story;
+    
+    const choicesDiv = document.getElementById('choices');
+    choicesDiv.innerHTML = '';
+    scene.choices.forEach(c => {
+        const btn = document.createElement('button');
+        btn.innerText = c.text;
+        btn.onclick = () => { currentSceneId = c.next; render(); };
+        choicesDiv.appendChild(btn);
+    });
+}
+
+// Запуск при загрузке страницы
+window.onload = render;
+</script>
+</body>
+</html>
