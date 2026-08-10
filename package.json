@@ -49,5 +49,6 @@ echo     "supertest": "^6.3.3" >> package.json
 echo   }, >> package.json
 echo   "engines": { >> package.json
 echo     "node": ">=16.0.0" >> package.json
-echo   } >> package.json
+echo   }, >> package.json
+echo   "type": "commonjs" >> package.json
 echo } >> package.json
